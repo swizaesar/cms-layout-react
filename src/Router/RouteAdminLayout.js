@@ -56,12 +56,26 @@ const RouteAdminLayout = (props) => {
     return (
         <Switch>
             <Suspense fallback={<div>Loading...</div>}>
-                <Sidebar
-                    handleLogout={handleLogout}
-                    handleShowSidebar={handleShowSidebar}
-                    isShow={isShow}
-                    routes={routesList.filter((item) => item.sidebar)}
-                />
+                {routesList
+                    .filter(
+                        (item) =>
+                            window.location.pathname === `/admin` + item.path &&
+                            item.sidebar
+                    )
+                    .map((item, key) => {
+                        return (
+                            <Sidebar
+                                key={key}
+                                item={item}
+                                handleLogout={handleLogout}
+                                handleShowSidebar={handleShowSidebar}
+                                isShow={isShow}
+                                routes={routesList.filter(
+                                    (item) => item.sidebar
+                                )}
+                            />
+                        );
+                    })}
                 <ButtonBars onClick={handleShowSidebar}>
                     <i
                         className={`fas ${!isShow ? "fa-bars" : "fa-times"}`}
