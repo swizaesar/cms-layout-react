@@ -42,7 +42,11 @@ const FormEmail = ({
     }, [handleSetValidCallback]);
     return (
         <FormGroup>
-            {item.label && <label>{item.label}</label>}
+            {item.label && (
+                <label htmlFor={item.id} className={item.labelClass}>
+                    {item.label}
+                </label>
+            )}
             <Style
                 name={item.name}
                 id={item.name}

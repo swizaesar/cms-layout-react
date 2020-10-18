@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Card, CardBody, Col, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import Button from "../../../Components/Particle/Button";
 import Form from "../../../Components/Molekul/FormValidation";
-// import Logo from "../../../Components/Assets/Image/Lakugan_Logo.png";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import LocalStorage from "../../../Utils/LocalStorage";
@@ -17,6 +16,17 @@ const Style = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    .title {
+        font-family: "Sansita Swashed", cursive;
+        font-weight: 700;
+        font-size: 28px;
+        text-align: center;
+    }
+    .form-label {
+        text-align: center;
+        display: block;
+        font-size: 14px;
+    }
 `;
 const Login = () => {
     const [validationClick, setValidationClick] = useState(true);
@@ -28,6 +38,7 @@ const Login = () => {
             action: "text",
             name: "userName",
             label: "Username",
+            labelClass: "form-label",
             col: 12,
             valid: "Username tidak boleh kosong",
             value: "",
@@ -36,6 +47,7 @@ const Login = () => {
         {
             type: "password",
             action: "password",
+            labelClass: "form-label",
             name: "password",
             label: "Password",
             col: 12,
@@ -66,31 +78,25 @@ const Login = () => {
         <Style id="login">
             <Container>
                 <Row className="justify-content-center">
-                    <Col xl="6" md="6" sm="8" xs="12">
+                    <Col xl="4" md="4" sm="6" xs="12">
                         <Row className="justify-content-center mb-3">
-                            <Col xl="8" md="8" sm="8" xs="12">
-                                {/* <img
-                                    src={Logo}
-                                    alt="logo"
-                                    className="img-fluid"
-                                /> */}
+                            <Col xl="12" md="12" sm="12" xs="12">
+                                <h1 className="title">
+                                    Welcome to React Layout CMS{" "}
+                                </h1>
                             </Col>
                         </Row>
-                        <Card>
-                            <CardBody>
-                                <form action="" onSubmit={handlerSubmitData}>
-                                    <Form
-                                        setForm={setForm}
-                                        validateForm={validateForm}
-                                        validationClick={validationClick}
-                                        form={form}
-                                    />
-                                    <Button block color="primary" type="submit">
-                                        Login
-                                    </Button>
-                                </form>
-                            </CardBody>
-                        </Card>
+                        <form action="" onSubmit={handlerSubmitData}>
+                            <Form
+                                setForm={setForm}
+                                validateForm={validateForm}
+                                validationClick={validationClick}
+                                form={form}
+                            />
+                            <Button block color="primary" type="submit">
+                                Login
+                            </Button>
+                        </form>
                     </Col>
                 </Row>
             </Container>

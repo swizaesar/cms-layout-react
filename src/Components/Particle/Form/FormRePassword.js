@@ -82,7 +82,9 @@ const FormRePassword = ({
             <Col xl="6" md="6" sm="6" xs="12">
                 <FormGroup>
                     {item.label && (
-                        <label style={{ color: "#c2c2c2" }}>{item.label}</label>
+                        <label htmlFor={item.id} className={item.labelClass}>
+                            {item.label}
+                        </label>
                     )}
                     <Style
                         label={item.label}
@@ -124,7 +126,9 @@ const FormRePassword = ({
             <Col xl="6" md="6" sm="6" xs="12">
                 <FormGroup>
                     {item.label && (
-                        <label style={{ color: "#c2c2c2" }}>{item.label}</label>
+                        <label htmlFor={item.id} className={item.labelClass}>
+                            {item.label}
+                        </label>
                     )}
                     <Style
                         label={item.label}

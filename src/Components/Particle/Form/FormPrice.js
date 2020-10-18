@@ -64,7 +64,11 @@ const FormPrice = (props) => {
     return (
         <FormGroup>
             <CurrencyStyle>
-                {item.label && <label>{item.label}</label>}
+                {item.label && (
+                    <label htmlFor={item.id} className={item.labelClass}>
+                        {item.label}
+                    </label>
+                )}
                 <div className="currency-row">
                     <CurrencyInput
                         name={item.name}

@@ -62,7 +62,9 @@ const FormText = ({
     return (
         <FormGroup>
             {item.label && (
-                <label style={{ color: "#c2c2c2" }}>{item.label}</label>
+                <label htmlFor={item.id} className={item.labelClass}>
+                    {item.label}
+                </label>
             )}
             <div className="position-relative">
                 <Style

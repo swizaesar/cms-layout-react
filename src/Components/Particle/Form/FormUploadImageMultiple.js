@@ -202,7 +202,11 @@ const FormUploadImageMultiple = ({
         <FormUploadImageMultipleStyle>
             {/* <GrowingLoading active={isLoadingRemove}></GrowingLoading> */}
             <FormGroup>
-                {item.label && <Label for={item.name}>{item.label}</Label>}
+                {item.label && (
+                    <Label for={item.name} className={item.labelClass}>
+                        {item.label}
+                    </Label>
+                )}
                 <input
                     className="d-none"
                     ref={refInput}

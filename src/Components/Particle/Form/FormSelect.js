@@ -47,7 +47,11 @@ const FormSelect = ({
     }, [handleSetValidCallback]);
     return (
         <FormGroup>
-            {item.label && <label>{item.label}</label>}
+            {item.label && (
+                <label htmlFor={item.id} className={item.labelClass}>
+                    {item.label}
+                </label>
+            )}
             <Style
                 width={item.width}
                 placeholder={item.placeholder}

@@ -46,7 +46,11 @@ const UploadFile = ({ validateForm, item, isStatus, id, onGetValue }) => {
     return (
         <Style>
             <FormGroup>
-                {item.label && <label>{item.label}</label>}
+                {item.label && (
+                    <label htmlFor={item.id} className={item.labelClass}>
+                        {item.label}
+                    </label>
+                )}
                 <input
                     name={item.name}
                     id={item.name}

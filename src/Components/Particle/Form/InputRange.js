@@ -87,7 +87,14 @@ const InputRangeMultiple = ({
                 <FormGroup>
                     <Row>
                         <Col xl="6">
-                            {item.labelMin && <label>{item.labelMin}</label>}
+                            {item.labelMin && (
+                                <label
+                                    htmlFor={item.id}
+                                    className={item.labelClass}
+                                >
+                                    {item.labelMin}
+                                </label>
+                            )}
                             <CurrencyInput
                                 name={item.name}
                                 value={amountMin}
@@ -100,7 +107,14 @@ const InputRangeMultiple = ({
                             />
                         </Col>
                         <Col xl="6">
-                            {item.labelMax && <label>{item.labelMax}</label>}
+                            {item.labelMax && (
+                                <label
+                                    htmlFor={item.id}
+                                    className={item.labelClass}
+                                >
+                                    {item.labelMax}
+                                </label>
+                            )}
                             <CurrencyInput
                                 name={item.name}
                                 value={amountMax}

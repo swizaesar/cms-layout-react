@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormGroup, Label } from "reactstrap";
+import { FormGroup } from "reactstrap";
 import NumberFormat from "react-number-format";
 import styled from "styled-components";
 
@@ -107,7 +107,11 @@ const FormTime = (props) => {
     return (
         <FormStyle>
             <FormGroup>
-                {item.label && <Label for={item.name}>{item.label}</Label>}
+                {item.label && (
+                    <label htmlFor={item.id} className={item.labelClass}>
+                        {item.label}
+                    </label>
+                )}
                 <NumberFormat
                     id={item.name}
                     name={item.name}

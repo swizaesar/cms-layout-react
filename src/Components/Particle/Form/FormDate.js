@@ -66,7 +66,12 @@ const FormDate = ({
                     <Row>
                         <Col xl="6" md="6" sm="6" xs="12">
                             {item.labelStartDate && (
-                                <label> {item.labelStartDate}</label>
+                                <label
+                                    htmlFor={item.id}
+                                    className={item.labelClass}
+                                >
+                                    {item.labelStartDate}
+                                </label>
                             )}
                             <DatePicker
                                 className="w-100"
