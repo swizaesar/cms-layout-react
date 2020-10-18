@@ -3,11 +3,11 @@ import { lazy } from "react";
 export default [
     {
         component: lazy(() => import("../Pages/Auth/Login")),
-        path: "/",
+        path: "/login",
         isHeader: false,
         layout: "",
         isFooter: false,
-        title: "Home",
+        title: "Login",
     },
     {
         component: lazy(() => import("../Pages/Admin/Dashboard")),

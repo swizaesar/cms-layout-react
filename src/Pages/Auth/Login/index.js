@@ -22,11 +22,6 @@ const Style = styled.div`
         font-size: 28px;
         text-align: center;
     }
-    .form-label {
-        text-align: center;
-        display: block;
-        font-size: 14px;
-    }
 `;
 const Login = () => {
     const [validationClick, setValidationClick] = useState(true);
@@ -37,8 +32,7 @@ const Login = () => {
             type: "text",
             action: "text",
             name: "userName",
-            label: "Username",
-            labelClass: "form-label",
+            placeholder: "Username",
             col: 12,
             valid: "Username tidak boleh kosong",
             value: "",
@@ -47,9 +41,8 @@ const Login = () => {
         {
             type: "password",
             action: "password",
-            labelClass: "form-label",
             name: "password",
-            label: "Password",
+            placeholder: "Password",
             col: 12,
             valid: "Password tidak boleh kosong",
             value: "",

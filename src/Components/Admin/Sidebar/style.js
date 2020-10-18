@@ -16,10 +16,26 @@ const Style = styled(Navbar)`
     width: ${sidebar.width}px;
     box-shadow: 0 2px 4px #eee;
     z-index: 2;
-    .img-fluid {
-        margin: 10px auto 40px;
-        width: 200px;
-        display: block;
+    .profile {
+        margin: 20px 0;
+        padding: 0 20px 20px 20px;
+        text-align: center;
+        &-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        &-position {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+        }
     }
     .navbar-heading {
         padding-left: 10px;
@@ -52,6 +68,10 @@ const Style = styled(Navbar)`
     }
     .nav-component {
         border-bottom: 2px solid #41474e;
+    }
+    .btn-logout {
+        position: absolute;
+        bottom: 0;
     }
     @media (max-width: 767px) {
         width: ${(props) => (props.open ? "100%" : "0px")};

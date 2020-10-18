@@ -5,10 +5,18 @@ import routesList from "./RoutesList";
 import localStorage from "../Utils/LocalStorage";
 
 const RouteGuestLayout = () => {
+    const [isFirstGet, setFirstGet] = React.useState(true);
+    const dataAuth = localStorage().get("auth");
     React.useEffect(() => {
-        const dataAuth = localStorage().get("auth");
         if (dataAuth?.token) {
             window.location = "/admin/dashboard";
+        }
+
+        return () => {};
+    }, []);
+    React.useEffect(() => {
+        if (window.location.pathname === "/" && !dataAuth?.token) {
+            window.location = "/login";
         }
         return () => {};
     }, []);

@@ -3,6 +3,7 @@ import Style from "./style";
 import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import localStorage from "../../../Utils/LocalStorage";
+import Logo from "../../../Components/Assets/Images/Logo.jpeg";
 
 const Sidebar = (props) => {
     const {
@@ -40,14 +41,18 @@ const Sidebar = (props) => {
     };
     return (
         <Style open={isShow}>
-            {/* <img src={Logo} alt="lakugan" className="img-fluid" /> */}
+            <div className="profile">
+                <img src={Logo} alt="Logo" className="img-fluid avatar" />
+                <h6 className="profile-name">Swizaesar Reza Ryann</h6>
+                <span className="profile-position">Front End Developer</span>
+            </div>
             <Nav className="mb-4">{createLinkSidebar(routes)}</Nav>
             <hr />
             <Nav>
                 <NavItem>
                     <NavLink
                         to={`/logout`}
-                        className={`nav-link`}
+                        className={`nav-link btn-logout`}
                         onClick={handleLogout}
                     >
                         <i className="fas fa-sign-out-alt mr-2"></i>

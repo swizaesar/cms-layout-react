@@ -9,6 +9,7 @@ import Sidebar from "../Components/Admin/Sidebar";
 import localStorage from "../Utils/LocalStorage";
 const Style = styled.div`
     width: calc(100% - (${sidebar.width}px));
+    padding: 20px;
     margin: 0 0 0 auto;
     background: #f5f5fb;
     position: absolute;
@@ -45,7 +46,7 @@ const RouteAdminLayout = (props) => {
     React.useEffect(() => {
         const dataAuth = localStorage().get("auth");
         if (!dataAuth?.token) {
-            window.location = "/";
+            window.location = "/login";
         }
         return () => {};
     }, []);

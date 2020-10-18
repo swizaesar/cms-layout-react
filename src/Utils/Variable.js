@@ -1,5 +1,5 @@
 export const color = {
-    primary: "#1a73e8",
+    primary: "#0f3349",
     secondary: "#6488f3",
 };
 export const sidebar = {
