@@ -11,7 +11,7 @@ const Style = styled.div`
     align-items: center;
     .fa-search,
     .fa-bell {
-        color: ${color.secondary};
+        color: ${color.primary};
     }
     .fa-bell {
         font-size: 18px;
@@ -43,8 +43,8 @@ const Header = () => {
         <Style>
             <Row className="align-items-center">
                 <Col xl="6" md="6" sm="6">
-                    <Button type="button" color="#e6eaf9" className="mr-3">
-                        <i className="far fa-bell"></i>
+                    <Button type="button" color="transparent" className="mr-3">
+                        <i className="fas fa-bell"></i>
                     </Button>
                 </Col>
             </Row>

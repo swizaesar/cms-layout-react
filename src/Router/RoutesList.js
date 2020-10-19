@@ -29,7 +29,7 @@ export default [
         layout: "/admin",
         isFooter: true,
         sidebar: {
-            icon: "fas fa-box mr-2",
+            icon: "fas fa-user mr-2",
             name: "Profile",
             activeName: "profile",
         },
