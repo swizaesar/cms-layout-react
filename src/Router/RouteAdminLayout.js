@@ -7,6 +7,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { sidebar } from "../Utils/Variable";
 import Sidebar from "../Components/Admin/Sidebar";
 import localStorage from "../Utils/LocalStorage";
+import Header from "../Components/Admin/Header";
 const Style = styled.div`
     width: calc(100% - (${sidebar.width}px));
     padding: 20px;
@@ -14,7 +15,7 @@ const Style = styled.div`
     background: #f5f5fb;
     position: absolute;
     right: 0;
-    top: 0;
+    top: ${(props) => (props.header.length > 0 ? "77px" : 0)};
     bottom: 0;
     table {
         th,
@@ -76,12 +77,27 @@ const RouteAdminLayout = (props) => {
                             />
                         );
                     })}
+                {routesList
+                    .filter(
+                        (item) =>
+                            window.location.pathname === `/admin` + item.path &&
+                            item.isHeader
+                    )
+                    .map((item, key) => {
+                        return <Header item={item} key={key} />;
+                    })}
                 <ButtonBars onClick={handleShowSidebar}>
                     <i
                         className={`fas ${!isShow ? "fa-bars" : "fa-times"}`}
                     ></i>
                 </ButtonBars>
-                <Style>
+                <Style
+                    header={routesList.filter(
+                        (item) =>
+                            window.location.pathname === `/admin` + item.path &&
+                            item.isHeader
+                    )}
+                >
                     {routesList
                         .filter((item) => item.layout === "/admin")
                         .map((item, key) => {

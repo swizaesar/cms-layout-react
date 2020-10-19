@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Suspense, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import routesList from "./RoutesList";
@@ -5,7 +6,6 @@ import routesList from "./RoutesList";
 import localStorage from "../Utils/LocalStorage";
 
 const RouteGuestLayout = () => {
-    const [isFirstGet, setFirstGet] = React.useState(true);
     const dataAuth = localStorage().get("auth");
     React.useEffect(() => {
         if (dataAuth?.token) {

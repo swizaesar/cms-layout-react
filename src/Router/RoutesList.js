@@ -22,4 +22,17 @@ export default [
         },
         title: "dashboard",
     },
+    {
+        component: lazy(() => import("../Pages/Admin/Profile")),
+        path: "/profile",
+        isHeader: true,
+        layout: "/admin",
+        isFooter: true,
+        sidebar: {
+            icon: "fas fa-box mr-2",
+            name: "Profile",
+            activeName: "profile",
+        },
+        title: "profile",
+    },
 ];
